@@ -25,6 +25,7 @@ namespace PyramidPanic
         private GameOverScene gameOverScene;
         private LoadScene loadScene;
         private ScoreScene scoreScene;
+        private QuitScene quitScene;
 
         //maak een variabele iState aan van het type interface IState
         private IState iState;
@@ -77,6 +78,13 @@ namespace PyramidPanic
         public ScoreScene ScoreScene
         {
             get { return this.scoreScene; }
+        }
+
+        //maak het field this.GameoverScene beschikbaar buiten de class d.m.v een
+        //Property StartScene
+        public QuitScene QuitScene
+        {
+            get { return this.quitScene; }
         }
 
 
@@ -132,6 +140,7 @@ namespace PyramidPanic
             this.scoreScene = new ScoreScene(this);
             this.gameOverScene = new GameOverScene(this);
             this.loadScene = new LoadScene(this);
+            this.quitScene = new QuitScene(this);
 
             this.iState = this.startScene;
         }
